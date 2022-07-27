@@ -1,21 +1,15 @@
 const Knex = require('knex').default;
-/* const { mysql } = require('../../config'); */
-
-
-/* const { OPTIONS_MYSQL } = process.env; */
-/* console.log(OPTIONS_MYSQL) */
 const { faker } = require('@faker-js/faker');
 faker.locale = "es";
 
-/* console.log(process.env.OPTIONS_MYSQL) */
 const knex = Knex({
     client: 'mysql',
-    connection: /* process.env.OPTIONS_MYSQL */
-        {
+    connection: {
         host: process.env.OPTIONS_MYSQL_HOST,
         user: process.env.OPTIONS_MYSQL_USER,
         password: process.env.OPTIONS_MYSQL_PASSWORD,
-        database: process.env.OPTIONS_MYSQL_DATABASE}
+        database: process.env.OPTIONS_MYSQL_DATABASE
+    }
 });
 console.log("conectados a mysql");
 
